@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#ffe4ec" />
+<title>Foto Foto Favorit Caca versi Irham</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Bangers&family=Caveat:wght@500;600;700&family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Dancing+Script:wght@600;700&family=Pacifico&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --font-body:'Quicksand',system-ui,-apple-system,sans-serif;
+    --font-cover:'Playfair Display',serif;
+    --font-hand:'Caveat',cursive;
+  }
+
+  /* ============================================================
+     PALET WARNA UNIK PER HALAMAN (sangat berbeda satu sama lain)
+     ============================================================ */
+
+  /* -------- 1. COVER: Rose Romance (PINK) -------- */
+  body{
+    --c-bg1:#ffe4ec;
+    --c-bg2:#ffd4e3;
+    --c-bg3:#ffb8d1;
+    --c-accent:#e26a8d;  --c-accent-dark:#c14b6e;
+    --c-text:#4a2b36;    --c-muted:#8a6b76;
+    --c-ph-border:#f2bccd; --c-ph-bg:#fff7fa; --c-ph-color:#e6a3b7;
+    --c-shadow:rgba(193,75,110,.16);
+    --c-shadow-strong:rgba(193,75,110,.28);
+    --c-nav-bg:rgba(255,255,255,.86);
+    --c-nav-border:rgba(226,106,141,.22);
+    --c-nav-shadow:rgba(193,75,110,.22);
+    --c-topbar-bg:rgba(255,246,249,.8);
+    --c-topbar-border:rgba(226,106,141,.16);
+    --c-dot-idle:#f4c6d6;  --c-dot-hover:#eda2ba;
+    --font-page:'Playfair Display',serif;
+  }
+
+  /* -------- 2. LUCU: Sunny Yellow (KUNING CERAH) -------- */
+  body[data-theme="lucu"]{
+    --c-bg1:#fff5cc;
+    --c-bg2:#ffeaa0;
+    --c-bg3:#ffde70;
+    --c-accent:#f59e0b;  --c-accent-dark:#d97706;
+    --c-text:#4a3518;    --c-muted:#8f7545;
+    --c-ph-border:#ffe3a3; --c-ph-bg:#fffdf2; --c-ph-color:#e6c56b;
+    --c-shadow:rgba(217,119,6,.2);
+    --c-shadow-strong:rgba(217,119,6,.35);
+    --c-nav-bg:rgba(255,253,242,.92);
+    --c-nav-border:rgba(245,158,11,.3);
+    --c-nav-shadow:rgba(217,119,6,.28);
+    --c-topbar-bg:rgba(255,250,220,.88);
+    --c-topbar-border:rgba(245,158,11,.25);
+    --c-dot-idle:#ffe3a3;  --c-dot-hover:#ffc97a;
+    --font-page:'Baloo 2',cursive;
+  }
+
+  /* -------- 3. CANTIK: Lavender (UNGU) -------- */
+  body[data-theme="cantik"]{
+    --c-bg1:#f0e8ff;
+    --c-bg2:#e0cfff;
+    --c-bg3:#cbb0ff;
+    --c-accent:#a855f7;  --c-accent-dark:#7d4bc4;
+    --c-text:#3d2a55;    --c-muted:#7a6496;
+    --c-ph-border:#dcc7f5; --c-ph-bg:#faf5ff; --c-ph-color:#b89be0;
+    --c-shadow:rgba(125,75,196,.18);
+    --c-shadow-strong:rgba(125,75,196,.32);
+    --c-nav-bg:rgba(252,248,255,.92);
+    --c-nav-border:rgba(168,85,247,.3);
+    --c-nav-shadow:rgba(125,75,196,.26);
+    --c-topbar-bg:rgba(243,232,255,.88);
+    --c-topbar-border:rgba(168,85,247,.22);
+    --c-dot-idle:#dcc7f5;  --c-dot-hover:#b89be0;
+    --font-page:'Cormorant Garamond',serif;
+  }
+
+  /* -------- 4. IMUT: Peach Mint (PEACH + MINT) -------- */
+  body[data-theme="imut"]{
+    --c-bg1:#ffe0d9;
+    --c-bg2:#ffcbd5;
+    --c-bg3:#c9f2da;
+    --c-accent:#ff6b8a;  --c-accent-dark:#e04a6b;
+    --c-text:#4a2f30;    --c-muted:#96706a;
+    --c-ph-border:#ffccc5; --c-ph-bg:#fffaf8; --c-ph-color:#ffb5a5;
+    --c-shadow:rgba(224,74,107,.18);
+    --c-shadow-strong:rgba(224,74,107,.32);
+    --c-nav-bg:rgba(255,251,248,.92);
+    --c-nav-border:rgba(255,107,138,.3);
+    --c-nav-shadow:rgba(224,74,107,.26);
+    --c-topbar-bg:rgba(255,240,236,.88);
+    --c-topbar-border:rgba(255,107,138,.22);
+    --c-dot-idle:#ffccc5;  --c-dot-hover:#ffb5a5;
+    --font-page:'Pacifico',cursive;
+  }
+
+  /* -------- 5. AIB: Teal (HIJAU TEAL) -------- */
+  body[data-theme="aib"]{
+    --c-bg1:#d0f7ef;
+    --c-bg2:#a5e8dd;
+    --c-bg3:#78d6c9;
+    --c-accent:#14b8a6;  --c-accent-dark:#0f8a7d;
+    --c-text:#154640;    --c-muted:#4d847d;
+    --c-ph-border:#94dcd1; --c-ph-bg:#f6fffd; --c-ph-color:#6dc8bb;
+    --c-shadow:rgba(15,138,125,.18);
+    --c-shadow-strong:rgba(15,138,125,.35);
+    --c-nav-bg:rgba(247,255,254,.92);
+    --c-nav-border:rgba(20,184,166,.3);
+    --c-nav-shadow:rgba(15,138,125,.28);
+    --c-topbar-bg:rgba(232,250,247,.9);
+    --c-topbar-border:rgba(20,184,166,.25);
+    --c-dot-idle:#94dcd1;  --c-dot-hover:#6dc8bb;
+    --font-page:'Bangers',cursive;
+  }
+
+  /* -------- 6. SEXY: Dark Wine (BURGUNDY GELAP) -------- */
+  body[data-theme="sexy"]{
+    --c-bg1:#2a0e18;
+    --c-bg2:#3d1524;
+    --c-bg3:#4f1d30;
+    --c-accent:#e8b04d;  --c-accent-dark:#f5ca70;
+    --c-text:#fbe8ee;    --c-muted:#c999ab;
+    --c-ph-border:#7d4453; --c-ph-bg:#3a1523; --c-ph-color:#b88298;
+    --c-shadow:rgba(0,0,0,.5);
+    --c-shadow-strong:rgba(0,0,0,.75);
+    --c-nav-bg:rgba(42,18,26,.92);
+    --c-nav-border:rgba(232,176,77,.35);
+    --c-nav-shadow:rgba(0,0,0,.55);
+    --c-topbar-bg:rgba(42,14,24,.9);
+    --c-topbar-border:rgba(232,176,77,.25);
+    --c-dot-idle:#7d4453;  --c-dot-hover:#b88298;
+    --font-page:'Cinzel',serif;
+  }
+
+  /* -------- 7. FAVORIT IRHAM: Sunset Orange (ORANYE HANGAT) -------- */
+  body[data-theme="favorit-irham"]{
+    --c-bg1:#fff0d9;
+    --c-bg2:#ffd9a3;
+    --c-bg3:#ffc47a;
+    --c-accent:#ea8c1c;  --c-accent-dark:#b35e05;
+    --c-text:#4a2e14;    --c-muted:#8a6a45;
+    --c-ph-border:#ffd0a3; --c-ph-bg:#fffbf2; --c-ph-color:#f0c078;
+    --c-shadow:rgba(179,94,5,.2);
+    --c-shadow-strong:rgba(179,94,5,.35);
+    --c-nav-bg:rgba(255,251,242,.92);
+    --c-nav-border:rgba(234,140,28,.3);
+    --c-nav-shadow:rgba(179,94,5,.28);
+    --c-topbar-bg:rgba(255,246,232,.88);
+    --c-topbar-border:rgba(234,140,28,.22);
+    --c-dot-idle:#ffd0a3;  --c-dot-hover:#f0c078;
+    --font-page:'Dancing Script',cursive;
+  }
+
+  /* -------- 8. SURAT: Classic Ivory (KREM) -------- */
+  body[data-theme="surat"]{
+    --c-bg1:#fffaf0;
+    --c-bg2:#f8ead0;
+    --c-bg3:#f0d9a8;
+    --c-accent:#c9975c;  --c-accent-dark:#a87a3f;
+    --c-text:#4a3a28;    --c-muted:#8a7a62;
+    --c-ph-border:#ecd6b3; --c-ph-bg:#fffcf6; --c-ph-color:#d4b382;
+    --c-shadow:rgba(168,122,63,.15);
+    --c-shadow-strong:rgba(168,122,63,.28);
+    --c-nav-bg:rgba(255,252,246,.9);
+    --c-nav-border:rgba(201,151,92,.28);
+    --c-nav-shadow:rgba(168,122,63,.22);
+    --c-topbar-bg:rgba(255,250,240,.88);
+    --c-topbar-border:rgba(201,151,92,.22);
+    --c-dot-idle:#ecd6b3;  --c-dot-hover:#d4b382;
+    --font-page:'Caveat',cursive;
+  }
+
+  /* ============================================================
+     BASE
+     ============================================================ */
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--font-body);
+    color:var(--c-text);
+    min-height:100vh;
+    /* background-color utama yang AKAN BERUBAH sesuai tema */
+    background-color:var(--c-bg1);
+    /* lapisan gradien overlay di atasnya */
+    background-image:
+      radial-gradient(circle at 12% 8%, var(--c-bg2) 0%, transparent 45%),
+      radial-gradient(circle at 88% 2%, var(--c-bg3) 0%, transparent 42%),
+      radial-gradient(circle at 50% 105%, var(--c-bg1) 0%, transparent 55%),
+      linear-gradient(160deg, transparent 0%, var(--c-bg2) 60%, var(--c-bg3) 100%);
+    background-attachment:fixed;
+    padding-bottom:120px;
+    overflow-x:hidden;
+    /* transisi warna yang smooth saat ganti halaman */
+    transition:
+      background-color .6s ease,
+      color .4s ease;
+  }
+
+  /* ============================================================
+     HATI MELAYANG GLOBAL
+     ============================================================ */
+  .hearts{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+  .hearts span{
+    position:absolute;bottom:-50px;font-size:18px;opacity:0;
+    animation:floatUp linear infinite;
+  }
+  @keyframes floatUp{
+    0%{transform:translateY(0) rotate(0);opacity:0}
+    10%{opacity:.4}
+    90%{opacity:.25}
+    100%{transform:translateY(-112vh) rotate(70deg);opacity:0}
+  }
+
+  /* ============================================================
+     TOPBAR
+     ============================================================ */
+  .topbar{
+    position:sticky;top:0;z-index:20;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:14px 20px;
+    background:var(--c-topbar-bg);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--c-topbar-border);
+    transition:background .5s ease, border-color .5s ease;
+  }
+  .brand{
+    font-family:var(--font-cover);
+    font-weight:700;font-size:1.05rem;letter-spacing:.4px;
+    color:var(--c-accent-dark);
+    transition:color .5s ease;
+  }
+  .brand span{color:var(--c-accent);display:inline-block;animation:beat 2s ease-in-out infinite}
+  .counter{font-size:.82rem;font-weight:700;color:var(--c-muted);letter-spacing:.5px}
+  @keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}
+
+  /* ============================================================
+     MAIN
+     ============================================================ */
+  main{
+    position:relative;z-index:1;
+    max-width:1080px;margin:0 auto;padding:30px 20px 40px;
+    transition:opacity .2s ease, transform .2s ease;
+  }
+  main.swapping{opacity:0;transform:translateY(8px)}
+
+  /* ============================================================
+     COVER
+     ============================================================ */
+  .cover-page{
+    min-height:calc(100vh - 190px);
+    display:flex;align-items:center;justify-content:center;
+    padding:20px 0 40px;position:relative;
+  }
+  .cover-frame{
+    position:relative;max-width:600px;width:100%;
+    padding:75px 42px 60px;
+    background:rgba(255,255,255,.42);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-radius:32px;
+    border:1px solid var(--c-nav-border);
+    box-shadow:
+      0 30px 80px var(--c-shadow-strong),
+      0 0 60px rgba(255,255,255,.35),
+      inset 0 0 80px rgba(255,255,255,.5);
+    text-align:center;overflow:hidden;
+  }
+  .cover-frame::before{
+    content:'';position:absolute;inset:16px;
+    border:1px solid var(--c-accent);border-radius:22px;
+    opacity:.35;pointer-events:none;
+  }
+  .cover-frame::after{
+    content:'';position:absolute;inset:24px;
+    border:1px dashed var(--c-accent);border-radius:16px;
+    opacity:.28;pointer-events:none;
+  }
+  .cover-ring{
+    position:absolute;top:38%;left:50%;
+    width:220px;height:220px;border-radius:50%;
+    border:1px dashed var(--c-accent);opacity:.32;
+    transform:translate(-50%,-50%);pointer-events:none;
+    animation:spin 40s linear infinite;
+  }
+  .cover-ring.inner{
+    width:160px;height:160px;border-style:dotted;opacity:.22;
+    animation-duration:25s;animation-direction:reverse;
+  }
+  @keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+  .cover-glow{
+    position:absolute;top:38%;left:50%;
+    width:280px;height:280px;border-radius:50%;
+    background:radial-gradient(circle, var(--c-accent) 0%, transparent 68%);
+    opacity:.22;transform:translate(-50%,-50%);
+    pointer-events:none;filter:blur(18px);
+    animation:glowPulse 4s ease-in-out infinite;
+  }
+  @keyframes glowPulse{
+    0%,100%{opacity:.18;transform:translate(-50%,-50%) scale(1)}
+    50%{opacity:.32;transform:translate(-50%,-50%) scale(1.08)}
+  }
+  .cover-heart{
+    position:relative;z-index:2;
+    font-size:3.8rem;margin-bottom:26px;
+    animation:heartPulse 2s ease-in-out infinite;
+    filter:drop-shadow(0 8px 22px rgba(226,106,141,.55));
+  }
+  @keyframes heartPulse{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.14)}
+  }
+  .cover-title{
+    position:relative;z-index:2;
+    font-family:var(--font-cover);font-weight:700;
+    font-size:clamp(1.9rem,5.5vw,3.2rem);
+    line-height:1.12;letter-spacing:.5px;
+    background:linear-gradient(90deg,
+      var(--c-accent-dark) 0%, var(--c-accent) 30%,
+      var(--c-accent-dark) 55%, var(--c-accent) 80%,
+      var(--c-accent-dark) 100%);
+    background-size:220% auto;
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;color:transparent;
+    animation:shimmer 4.5s linear infinite;
+    filter:drop-shadow(0 2px 18px rgba(255,255,255,.6));
+  }
+  @keyframes shimmer{0%{background-position:0% center}100%{background-position:220% center}}
+  .cover-title .sub-line{
+    display:block;font-family:var(--font-cover);
+    font-style:italic;font-weight:600;
+    font-size:.48em;margin-top:18px;letter-spacing:3px;
+    -webkit-text-fill-color:var(--c-accent);
+    color:var(--c-accent);filter:none;
+  }
+  .cover-ornament{
+    position:relative;z-index:2;
+    display:flex;align-items:center;justify-content:center;
+    gap:14px;margin:28px 0 22px;
+  }
+  .orn-line{
+    width:80px;height:1px;
+    background:linear-gradient(90deg,transparent,var(--c-accent),transparent);
+  }
+  .orn-heart{color:var(--c-accent);font-size:1.2rem;animation:beat 2s ease-in-out infinite}
+  .cover-sub{
+    position:relative;z-index:2;
+    font-family:var(--font-hand);font-size:1.4rem;
+    line-height:1.5;color:var(--c-muted);margin-bottom:36px;
+  }
+  .cover-cta{
+    position:relative;z-index:2;
+    display:inline-flex;align-items:center;gap:10px;
+    padding:15px 38px;border:none;border-radius:99px;
+    background:linear-gradient(135deg,var(--c-accent),var(--c-accent-dark));
+    color:#fff;font-family:inherit;
+    font-size:.88rem;font-weight:700;
+    letter-spacing:2.5px;text-transform:uppercase;cursor:pointer;
+    box-shadow:0 14px 34px var(--c-shadow-strong);
+    overflow:hidden;
+  }
+  .cover-cta::after{
+    content:'';position:absolute;top:0;left:-100%;
+    width:100%;height:100%;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);
+    animation:shine 3s ease-in-out infinite;
+  }
+  @keyframes shine{0%,100%{left:-100%}50%,60%{left:100%}}
+  .cover-cta:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 20px 44px var(--c-shadow-strong)}
+  .cover-sparkle{
+    position:absolute;font-size:1.1rem;
+    color:var(--c-accent);opacity:0;pointer-events:none;
+    animation:twinkle 3.5s ease-in-out infinite;z-index:1;
+  }
+  @keyframes twinkle{
+    0%,100%{opacity:0;transform:scale(.3) rotate(0deg)}
+    50%{opacity:1;transform:scale(1.2) rotate(180deg)}
+  }
+  .corner{
+    position:absolute;font-size:1.4rem;color:var(--c-accent);
+    opacity:.7;animation:beat 2.6s ease-in-out infinite;z-index:2;
+  }
+  .corner.tl{top:14px;left:22px}
+  .corner.tr{top:14px;right:22px;animation-delay:.4s}
+  .corner.bl{bottom:14px;left:22px;animation-delay:.8s}
+  .corner.br{bottom:14px;right:22px;animation-delay:1.2s}
+
+  /* ============================================================
+     PAGE HEAD
+     ============================================================ */
+  .page-head{text-align:center;margin-bottom:26px;position:relative;z-index:2}
+  .page-emoji{display:block;font-size:2.3rem;margin-bottom:10px;animation:beat 2.4s ease-in-out infinite}
+  .page-title{
+    font-family:var(--font-page);
+    font-weight:700;
+    font-size:clamp(1.7rem,4.6vw,2.9rem);
+    line-height:1.18;
+    color:var(--c-accent-dark);
+    letter-spacing:.3px;
+    transition:color .5s ease;
+  }
+  .page-note{
+    margin-top:12px;font-size:.95rem;color:var(--c-muted);
+    font-weight:500;max-width:480px;margin-left:auto;margin-right:auto;
+  }
+  .divider{
+    width:90px;height:3px;margin:18px auto 0;border-radius:99px;
+    background:linear-gradient(90deg,transparent,var(--c-accent),transparent);
+  }
+
+  /* Judul per tema */
+  body[data-theme="lucu"] .page-title{
+    font-weight:800;font-size:clamp(1.9rem,5.2vw,3.3rem);
+    letter-spacing:.5px;
+    animation:bounceTitle 2.8s ease-in-out infinite;
+  }
+  @keyframes bounceTitle{
+    0%,100%{transform:translateY(0) rotate(-1deg)}
+    50%{transform:translateY(-6px) rotate(1deg)}
+  }
+  body[data-theme="cantik"] .page-title{
+    font-weight:500;font-style:italic;
+    letter-spacing:3px;
+    font-size:clamp(1.8rem,5vw,3.1rem);
+  }
+  body[data-theme="imut"] .page-title{
+    font-weight:400;
+    font-size:clamp(1.5rem,4.5vw,2.7rem);
+    animation:wiggleTitle 4s ease-in-out infinite;
+  }
+  @keyframes wiggleTitle{
+    0%,100%{transform:rotate(-1.5deg)}
+    50%{transform:rotate(1.5deg)}
+  }
+  body[data-theme="aib"] .page-title{
+    font-weight:400;text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:clamp(2rem,5.5vw,3.4rem);
+    text-shadow:3px 3px 0 rgba(255,255,255,.6), 5px 5px 0 var(--c-accent);
+    transform:rotate(-2deg);
+    display:inline-block;
+  }
+  body[data-theme="sexy"] .page-title{
+    font-weight:700;text-transform:uppercase;
+    letter-spacing:6px;
+    font-size:clamp(1.5rem,4.3vw,2.7rem);
+    background:linear-gradient(90deg,#f5ca70 0%, #fff2c4 50%, #e8b04d 100%);
+    background-size:200% auto;
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;color:transparent;
+    animation:shimmer 4s linear infinite;
+    filter:drop-shadow(0 0 20px rgba(232,176,77,.4));
+  }
+  body[data-theme="favorit-irham"] .page-title{
+    font-weight:700;
+    font-size:clamp(2.1rem,5.5vw,3.6rem);
+    letter-spacing:.5px;
+  }
+
+  /* ============================================================
+     DEKORASI
+     ============================================================ */
+  .page{position:relative}
+  .decor-layer{
+    position:absolute;inset:-20px;pointer-events:none;
+    overflow:hidden;z-index:0;border-radius:20px;
+  }
+  .deco{position:absolute;pointer-events:none}
+
+  /* Pola latar per tema */
+  body[data-theme="lucu"] .decor-layer{
+    background-image:radial-gradient(circle, rgba(245,158,11,.15) 3px, transparent 3px);
+    background-size:34px 34px;
+  }
+  body[data-theme="cantik"] .decor-layer{
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(168,85,247,.1) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(168,85,247,.08) 0%, transparent 40%);
+  }
+  body[data-theme="imut"] .decor-layer{
+    background-image:
+      radial-gradient(circle at 15% 20%, rgba(255,107,138,.12) 0%, transparent 30%),
+      radial-gradient(circle at 85% 80%, rgba(122,208,168,.12) 0%, transparent 30%);
+  }
+  body[data-theme="aib"] .decor-layer{
+    background-image:radial-gradient(circle, rgba(15,138,125,.15) 2px, transparent 2px);
+    background-size:18px 18px;
+  }
+  body[data-theme="sexy"] .decor-layer{
+    background:radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,.45) 90%);
+  }
+  body[data-theme="favorit-irham"] .decor-layer{
+    background:
+      radial-gradient(circle at 30% 20%, rgba(255,228,180,.4) 0%, transparent 40%),
+      radial-gradient(circle at 70% 80%, rgba(255,200,150,.35) 0%, transparent 45%);
+  }
+
+  /* ============================================================
+     SINGLE PHOTO FRAME
+     ============================================================ */
+  .single-photo-wrap{
+    display:flex;justify-content:center;align-items:center;
+    position:relative;padding:30px 10px;z-index:2;
+  }
+  .single-photo{
+    position:relative;width:100%;max-width:400px;
+    aspect-ratio:3/4;background:#fff;
+    padding:14px 14px 58px;
+    border-radius:6px;
+    box-shadow:0 24px 60px var(--c-shadow-strong);
+    transition:transform .4s cubic-bezier(.22,.9,.3,1), box-shadow .4s;
+    animation:photoIn .7s cubic-bezier(.22,.9,.3,1) both;
+  }
+  @keyframes photoIn{
+    from{opacity:0;transform:translateY(20px) rotate(0)}
+    to{opacity:1;transform:translateY(0) rotate(var(--rot,0deg))}
+  }
+  .single-photo img{
+    width:100%;height:100%;
+    object-fit:cover;border-radius:3px;display:block;
+  }
+  .single-photo .ph{
+    position:absolute;inset:14px 14px 58px;
+    display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:8px;
+    border:2px dashed var(--c-ph-border);
+    border-radius:3px;background:var(--c-ph-bg);
+    color:var(--c-ph-color);font-size:1.8rem;
+  }
+  .single-photo .ph small{
+    font-size:.7rem;font-weight:700;letter-spacing:1.4px;
+    text-transform:uppercase;color:inherit;
+  }
+  .single-photo figcaption{
+    position:absolute;bottom:16px;left:0;right:0;
+    text-align:center;font-family:var(--font-page);
+    font-size:1.4rem;color:var(--c-muted);
+  }
+  .single-photo figcaption .cap-heart{
+    color:var(--c-accent);display:inline-block;margin:0 4px;
+    animation:beat 2s ease-in-out infinite;
+  }
+
+  /* Bingkai unik per tema */
+  body[data-theme="lucu"] .single-photo{
+    --rot:2.5deg;
+    border-radius:24px;
+    padding:16px 16px 60px;
+    box-shadow:
+      0 0 0 5px #fff,
+      0 0 0 10px #f59e0b,
+      0 0 0 13px #fff,
+      0 26px 60px rgba(217,119,6,.4);
+  }
+  body[data-theme="lucu"] .single-photo:hover{
+    transform:rotate(0deg) scale(1.03);
+  }
+  body[data-theme="lucu"] .single-photo::before{
+    content:'✂️';position:absolute;
+    top:-28px;right:8px;font-size:1.3rem;
+    transform:rotate(15deg);opacity:.6;
+  }
+  body[data-theme="lucu"] .single-photo figcaption{font-family:'Baloo 2',cursive;font-weight:700}
+
+  body[data-theme="cantik"] .single-photo{
+    --rot:-2deg;
+    padding:18px 18px 66px;
+    border-radius:2px;
+    box-shadow:
+      0 0 0 1px rgba(168,85,247,.5),
+      0 0 60px rgba(168,85,247,.5),
+      0 30px 70px rgba(125,75,196,.45);
+  }
+  body[data-theme="cantik"] .single-photo::before{
+    content:'';position:absolute;inset:-14px;
+    border:1px solid rgba(168,85,247,.5);
+    border-radius:4px;pointer-events:none;
+  }
+  body[data-theme="cantik"] .single-photo::after{
+    content:'';position:absolute;inset:-24px;
+    border:1px solid rgba(168,85,247,.25);
+    border-radius:8px;pointer-events:none;
+  }
+  body[data-theme="cantik"] .single-photo figcaption{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;letter-spacing:1.5px;font-size:1.3rem;
+  }
+  .cantik-pearl{
+    position:absolute;width:8px;height:8px;border-radius:50%;
+    background:radial-gradient(circle at 30% 30%, #fff, #dcc7f5);
+    box-shadow:0 1px 3px rgba(125,75,196,.4);
+    z-index:3;
+  }
+
+  body[data-theme="imut"] .single-photo{
+    --rot:-1.5deg;
+    border-radius:28px;
+    padding:18px 18px 62px;
+    background:#fffdfb;
+    box-shadow:
+      0 0 0 4px #fff,
+      0 0 0 8px #ff6b8a,
+      0 26px 60px rgba(224,74,107,.35);
+  }
+  body[data-theme="imut"] .single-photo::before{
+    content:'🎀';position:absolute;
+    top:-26px;left:50%;
+    transform:translateX(-50%);
+    font-size:2.2rem;
+    filter:drop-shadow(0 4px 8px rgba(224,74,107,.3));
+    z-index:3;
+  }
+  body[data-theme="imut"] .single-photo .ph{
+    border-radius:20px;border-style:dashed;border-width:2.5px;
+  }
+  body[data-theme="imut"] .single-photo img{border-radius:20px}
+  body[data-theme="imut"] .single-photo figcaption{
+    font-family:'Pacifico',cursive;font-size:1.1rem;
+  }
+  body[data-theme="imut"] .single-photo:hover{
+    transform:rotate(0deg) scale(1.03) translateY(-4px);
+  }
+
+  body[data-theme="aib"] .single-photo{
+    --rot:1.8deg;
+    border-radius:2px;
+    padding:12px 12px 54px;
+    border:3px solid #0f8a7d;
+    box-shadow:
+      10px 10px 0 rgba(15,138,125,.4),
+      0 28px 60px rgba(15,138,125,.3);
+  }
+  body[data-theme="aib"] .single-photo::before,
+  body[data-theme="aib"] .single-photo::after{
+    content:'';position:absolute;
+    width:76px;height:22px;
+    background:rgba(255,241,166,.85);
+    border:1px solid rgba(0,0,0,.06);
+    box-shadow:0 2px 5px rgba(0,0,0,.12);
+    z-index:3;
+  }
+  body[data-theme="aib"] .single-photo::before{
+    top:-11px;left:-16px;transform:rotate(-32deg);
+  }
+  body[data-theme="aib"] .single-photo::after{
+    bottom:-11px;right:-16px;transform:rotate(-32deg);
+  }
+  body[data-theme="aib"] .single-photo figcaption{
+    font-family:'Bangers',cursive;
+    letter-spacing:2px;font-size:1.5rem;color:#0f8a7d;
+  }
+  body[data-theme="aib"] .single-photo:hover{
+    transform:rotate(-1deg) scale(1.03);
+    box-shadow:
+      14px 14px 0 rgba(15,138,125,.5),
+      0 34px 74px rgba(15,138,125,.4);
+  }
+
+  body[data-theme="sexy"] .single-photo{
+    --rot:-1.5deg;
+    background:#12050a;
+    border-radius:2px;
+    padding:14px 14px 58px;
+    box-shadow:
+      0 0 0 1px #e8b04d,
+      0 0 0 5px #12050a,
+      0 0 0 7px rgba(232,176,77,.55),
+      0 0 60px rgba(232,176,77,.35),
+      0 30px 80px rgba(0,0,0,.8);
+  }
+  body[data-theme="sexy"] .single-photo::before{
+    content:'';position:absolute;inset:-18px;
+    border:1px solid rgba(232,176,77,.4);
+    border-radius:4px;pointer-events:none;
+  }
+  body[data-theme="sexy"] .single-photo .ph{
+    background:#1e0a14;border-color:#7d4453;color:#b88298;
+  }
+  body[data-theme="sexy"] .single-photo figcaption{
+    font-family:'Cinzel',serif;
+    letter-spacing:3px;font-size:.9rem;
+    color:#f0c46b;text-transform:uppercase;
+  }
+  body[data-theme="sexy"] .single-photo figcaption .cap-heart{color:#f0c46b}
+
+  body[data-theme="favorit-irham"] .single-photo{
+    --rot:-1deg;
+    padding:16px 16px 64px;
+    border-radius:4px;
+    background:#fffcf5;
+    box-shadow:
+      0 0 0 1px rgba(234,140,28,.4),
+      0 0 70px rgba(255,180,80,.5),
+      0 30px 70px rgba(179,94,5,.4);
+  }
+  body[data-theme="favorit-irham"] .single-photo::before{
+    content:'';position:absolute;inset:-14px;
+    border:1px solid rgba(234,140,28,.4);
+    border-radius:6px;pointer-events:none;
+  }
+  body[data-theme="favorit-irham"] .single-photo::after{
+    content:'❦';position:absolute;
+    bottom:14px;left:50%;transform:translateX(-50%);
+    font-size:1.6rem;color:var(--c-accent);
+    opacity:.5;pointer-events:none;
+  }
+  body[data-theme="favorit-irham"] .single-photo figcaption{
+    font-family:'Dancing Script',cursive;
+    font-weight:700;font-size:1.5rem;bottom:30px;
+  }
+
+  /* ============================================================
+     DEKORASI UNIK PER TEMA
+     ============================================================ */
+  .deco.confetti{
+    width:10px;height:10px;border-radius:2px;background:var(--cc);
+    animation:confettiDrop 6s ease-in-out infinite;
+    animation-delay:var(--d,0s);
+    box-shadow:0 0 8px var(--cc);
+  }
+  @keyframes confettiDrop{
+    0%{transform:translateY(-10px) rotate(0);opacity:0}
+    15%{opacity:1}
+    85%{opacity:1}
+    100%{transform:translateY(480px) rotate(720deg);opacity:0}
+  }
+  .deco.balloon{
+    width:var(--s,32px);height:calc(var(--s,32px) * 1.2);
+    border-radius:50% 50% 50% 50% / 55% 55% 45% 45%;
+    background:radial-gradient(circle at 30% 25%, #fff8, var(--cc));
+    animation:balloonUp 12s ease-in-out infinite;
+    animation-delay:var(--d,0s);
+  }
+  .deco.balloon::after{
+    content:'';position:absolute;top:100%;left:50%;
+    width:1px;height:32px;background:var(--cc);opacity:.5;
+  }
+  @keyframes balloonUp{
+    0%{transform:translateY(30px) rotate(-4deg);opacity:0}
+    10%{opacity:1}
+    90%{opacity:1}
+    100%{transform:translateY(-540px) rotate(4deg);opacity:0}
+  }
+  .deco.star-burst{
+    font-size:1.4rem;
+    animation:starPop 3s ease-in-out infinite;
+    animation-delay:var(--d,0s);
+  }
+  @keyframes starPop{
+    0%,100%{transform:scale(.6) rotate(0);opacity:.3}
+    50%{transform:scale(1.2) rotate(180deg);opacity:1}
+  }
+
+  .deco.petal{
+    font-size:1.6rem;
+    animation:petalFall 10s linear infinite;
+    animation-delay:var(--d,0s);
+  }
+  @keyframes petalFall{
+    0%{transform:translateY(-30px) rotate(0) translateX(0);opacity:0}
+    10%{opacity:.85}
+    90%{opacity:.85}
+    100%{transform:translateY(540px) rotate(540deg) translateX(50px);opacity:0}
+  }
+  .deco.soft-sparkle{
+    font-size:1.1rem;color:#a855f7;
+    animation:twinkle 3.5s ease-in-out infinite;
+    animation-delay:var(--d,0s);
+  }
+  .deco.butterfly{
+    font-size:1.6rem;
+    animation:butterflyFloat 12s ease-in-out infinite;
+    animation-delay:var(--d,0s);
+  }
+  @keyframes butterflyFloat{
+    0%,100%{transform:translate(0,0) rotate(-10deg)}
+    25%{transform:translate(30px,-20px) rotate(8deg)}
+    50%{transform:translate(60px,10px) rotate(-6deg)}
+    75%{transform:translate(30px,30px) rotate(10deg)}
+  }
+  .deco.soft-orb{
+    width:var(--s,60px);height:var(--s,60px);
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(168,85,247,.4) 0%, transparent 70%);
+    filter:blur(8px);
+    animation:orbFloat 8s ease-in-out infinite;
+    animation-delay:var(--d,0s);
+  }
+  @keyframes orbFloat{
+    0%,100%{transform:translateY(0) scale(1);opacity:.4}
+    50%{transform:translateY(-20px) scale(1.15);opacity:.7}
+  }
+
+  .deco.bubble{
+    width:var(--s,24px);height:var(--s,24px);
+    border-radius:50%;
+    background:radial-gradient(circle at 30% 30%, rgba(255,255,255,.95), rgba(255,107,138,.4));
+    box-shadow:0 0 14px rgba(255,107,138,.4);
+    animation:bubbleRise 9s linear infinite;
+    animation-delay:var(--d,0s);
+  }
+  @keyframes bubbleRise{
+    0%{transform:translateY(20px) scale(.7);opacity:0}
+    15%{opacity:.85}
+    85%{opacity:.85}
+    100%{transform:translateY(-520px) scale(1.3);opacity:0}
+  }
+  .deco.cute-heart{
+    font-size:1.5rem;
+    animation:cuteFloat 4.5s ease-in-out infinite;
+    animation-delay:var(--d,0s);
+  }
+  @keyframes cuteFloat{
+    0%,100%{transform:translateY(0) rotate(-6deg) scale(1)}
+    50%{transform:translateY(-16px) rotate(6deg) scale(1.12)}
+  }
+  .deco.cloud{
+    font-size:2.4rem;opacity:.7;
+    animation:cloudDrift 20s ease-in-out infinite;
+    animation-delay:var(--d,0s);
+  }
+  @keyframes cloudDrift{
+    0%,100%{transform:translateX(0)}
+    50%{transform:translateX(30px)}
+  }
+  .deco.kawaii-star{
+    font-size:1.3rem;
+    animation:wiggle 3s ease-in-out infinite;
+    animation-delay:var(--d,0s);
+  }
+  @keyframes wiggle{
+    0%,100%{transform:rotate(-15deg) scale(1)}
+    50%{transform:rotate(15deg) scale(1.1)}
+  }
+
+  .deco.comic-burst{
+    display:inline-block;
+    padding:8px 14px;
+    background:#0f8a7d;color:#fff;
+    font-family:'Bangers',cursive;
+    letter-spacing:2px;font-size:1rem;
+    transform:rotate(-12deg);
+    clip-path:polygon(
+      0% 20%, 15% 0%, 25% 15%, 45% 0%, 55% 15%,
+      75% 0%, 85% 15%, 100% 20%, 90% 40%, 100% 60%,
+      85% 80%, 75% 100%, 55% 85%, 45% 100%, 25% 85%,
+      15% 100%, 0% 80%, 10% 60%
+    );
+    animation:comicWobble 2.5s ease-in-out infinite;
+    animation-delay:var(--d,0s);
+    text-shadow:1px 1px 0 rgba(0,0,0,.3);
+    box-shadow:0 6px 14px rgba(15,138,125,.4);
+  }
+  @keyframes comicWobble{
+    0%,100%{transform:rotate(-12deg) scale(1)}
+    50%{transform:rotate(6deg) scale(1.12)}
+  }
+  .deco.sweat{
+    font-size:1.7rem;
+    animation:sweatDrop 3s ease-in-out infinite;
+    animation-delay:var(--d,0s);
+  }
+  @keyframes sweatDrop{
+    0%,100%{transform:translateY(0) rotate(0)}
+    50%{transform:translateY(12px) rotate(20deg)}
+  }
+  .deco.speed-line{
+    width:60px;height:3px;
+    background:linear-gradient(90deg,transparent,#0f8a7d,transparent);
+    transform:rotate(var(--r,0deg));
+    animation:speedPulse 2.5s ease-in-out infinite;
+    animation-delay:var(--d,0s);
+    opacity:.5;
+  }
+  @keyframes speedPulse{
+    0%,100%{opacity:.2;transform:rotate(var(--r,0deg)) scaleX(.6)}
+    50%{opacity:.7;transform:rotate(var(--r,0deg)) scaleX(1.2)}
+  }
+  .deco.memphis{
+    width:14px;height:14px;background:#0f8a7d;opacity:.35;
+    transform:rotate(45deg);
+    animation:memphisSpin 8s linear infinite;
+    animation-delay:var(--d,0s);
+  }
+  @keyframes memphisSpin{to{transform:rotate(405deg)}}
+
+  .deco.candle-glow{
+    width:340px;height:340px;border-radius:50%;
+    background:radial-gradient(circle, rgba(232,176,77,.3) 0%, transparent 65%);
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    filter:blur(24px);
+    animation:candleFlicker 3s ease-in-out infinite;
+  }
+  @keyframes candleFlicker{
+    0%,100%{opacity:.55;transform:translate(-50%,-50%) scale(1)}
+    30%{opacity:.85;transform:translate(-50%,-50%) scale(1.05)}
+    60%{opacity:.45;transform:translate(-50%,-50%) scale(.97)}
+  }
+  .deco.gold-particle{
+    width:var(--s,5px);height:var(--s,5px);
+    border-radius:50%;
+    background:radial-gradient(circle, #fff2c4, #e8b04d 65%, transparent);
+    box-shadow:0 0 12px #e8b04d;
+    animation:goldRise 11s linear infinite;
+    animation-delay:var(--d,0s);
+  }
+  @keyframes goldRise{
+    0%{transform:translateY(20px) scale(.5);opacity:0}
+    15%{opacity:1}
+    85%{opacity:1}
+    100%{transform:translateY(-540px) scale(1.3);opacity:0}
+  }
+  .deco.elegant-sparkle{
+    font-size:1.3rem;color:#f0c46b;
+    animation:twinkle 3.5s ease-in-out infinite;
+    animation-delay:var(--d,0s);
+    filter:drop-shadow(0 0 10px rgba(232,176,77,.9));
+  }
+
+  .deco.sun-rays{
+    position:absolute;top:50%;left:50%;
+    width:640px;height:640px;
+    transform:translate(-50%,-50%);
+    background:conic-gradient(
+      from 0deg,
+      transparent 0deg, rgba(255,214,150,.22) 20deg, transparent 40deg,
+      transparent 50deg, rgba(255,214,150,.22) 70deg, transparent 90deg,
+      transparent 100deg, rgba(255,214,150,.22) 120deg, transparent 140deg,
+      transparent 150deg, rgba(255,214,150,.22) 170deg, transparent 190deg,
+      transparent 200deg, rgba(255,214,150,.22) 220deg, transparent 240deg,
+      transparent 250deg, rgba(255,214,150,.22) 270deg, transparent 290deg,
+      transparent 300deg, rgba(255,214,150,.22) 320deg, transparent 340deg,
+      transparent 350deg, rgba(255,214,150,.22) 370deg, transparent 360deg
+    );
+    border-radius:50%;
+    animation:raysRotate 60s linear infinite;
+    pointer-events:none;
+  }
+  @keyframes raysRotate{to{transform:translate(-50%,-50%) rotate(360deg)}}
+  .deco.warm-dust{
+    width:var(--s,5px);height:var(--s,5px);
+    border-radius:50%;
+    background:radial-gradient(circle, #fff3d6, #ea8c1c 70%, transparent);
+    box-shadow:0 0 12px rgba(234,140,28,.8);
+    animation:goldRise 12s linear infinite;
+    animation-delay:var(--d,0s);
+  }
+  .deco.warm-heart{
+    font-size:1.5rem;
+    animation:cuteFloat 5s ease-in-out infinite;
+    animation-delay:var(--d,0s);
+  }
+  .deco.warm-glow{
+    width:380px;height:380px;border-radius:50%;
+    background:radial-gradient(circle, rgba(255,190,100,.4) 0%, transparent 65%);
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    filter:blur(28px);
+    animation:glowPulse 5s ease-in-out infinite;
+    pointer-events:none;
+  }
+
+  /* ============================================================
+     SURAT
+     ============================================================ */
+  .letter-wrap{position:relative;z-index:2;max-width:620px;margin:0 auto}
+  .letter{
+    position:relative;
+    padding:44px 32px 36px;
+    background:#fffefb;
+    border:1px solid var(--c-ph-border);
+    border-radius:10px;
+    box-shadow:0 18px 46px var(--c-shadow-strong);
+    background-image:repeating-linear-gradient(#fffefb 0 33px, #fbf3e8 33px 34px);
+    background-position:0 44px;
+  }
+  .letter::before{
+    content:'';position:absolute;top:-13px;left:50%;
+    width:110px;height:26px;
+    transform:translateX(-50%) rotate(-2deg);
+    background:var(--c-accent);opacity:.45;border-radius:3px;
+  }
+  .letter p{
+    font-family:var(--font-hand);
+    font-size:1.55rem;line-height:34px;color:#5b3a45;
+  }
+  .letter .salutation{margin-bottom:6px}
+  .letter .closing{
+    margin-top:14px;font-size:1.85rem;
+    color:var(--c-accent-dark);font-weight:700;
+  }
+  .letter .heart{display:inline-block;animation:beat 1.6s ease-in-out infinite}
+  .letter .signature{
+    margin-top:12px;text-align:right;
+    font-size:1.6rem;color:var(--c-accent-dark);
+  }
+  .deco.letter-flourish{
+    font-size:2.2rem;color:var(--c-accent);
+    opacity:.55;font-family:var(--font-cover);
+  }
+  .deco.letter-flourish.top{top:10px;left:50%;transform:translateX(-50%) rotate(180deg)}
+  .deco.letter-flourish.bottom{bottom:10px;left:50%;transform:translateX(-50%)}
+  .deco.wax-seal{
+    position:absolute;
+    bottom:-22px;right:24px;
+    width:52px;height:52px;
+    border-radius:50%;
+    display:grid;place-items:center;
+    font-size:1.4rem;color:#fff;
+    background:radial-gradient(circle at 35% 30%, #c94863, #8a1e35 80%);
+    box-shadow:
+      0 6px 14px rgba(0,0,0,.3),
+      inset 0 -3px 6px rgba(0,0,0,.35),
+      inset 0 3px 6px rgba(255,255,255,.25);
+    transform:rotate(-12deg);
+  }
+
+  /* ============================================================
+     NAVBAR
+     ============================================================ */
+  .navbar{
+    position:fixed;left:50%;bottom:18px;transform:translateX(-50%);
+    z-index:30;
+    display:flex;align-items:center;gap:10px;
+    padding:9px 13px;border-radius:99px;
+    background:var(--c-nav-bg);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border:1px solid var(--c-nav-border);
+    box-shadow:0 12px 32px var(--c-nav-shadow);
+    max-width:calc(100vw - 24px);
+    transition:background .5s ease, border-color .5s ease, box-shadow .5s ease;
+  }
+  .nav-btn{
+    flex:0 0 auto;width:40px;height:40px;
+    border:none;border-radius:50%;
+    display:grid;place-items:center;
+    font-family:inherit;font-size:1.5rem;line-height:0;padding-bottom:4px;
+    color:#fff;cursor:pointer;
+    background:linear-gradient(135deg,var(--c-accent),var(--c-accent-dark));
+    box-shadow:0 6px 14px var(--c-nav-shadow);
+    transition:transform .2s, opacity .2s, background .5s ease;
+  }
+  .nav-btn:hover:not(:disabled){transform:scale(1.09)}
+  .nav-btn:disabled{opacity:.32;cursor:default;box-shadow:none}
+  .dots{display:flex;align-items:center;gap:7px;padding:0 4px}
+  .dot{
+    width:9px;height:9px;padding:0;border:none;border-radius:99px;
+    background:var(--c-dot-idle);cursor:pointer;
+    transition:all .28s cubic-bezier(.22,.9,.3,1), background .5s ease;
+  }
+  .dot:hover{background:var(--c-dot-hover)}
+  .dot.active{width:26px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent-dark))}
+
+  @media(max-width:520px){
+    .cover-frame{padding:62px 24px 48px;border-radius:24px}
+    .cover-frame::before{inset:10px;border-radius:16px}
+    .cover-frame::after{inset:16px;border-radius:12px}
+    .cover-ring{width:170px;height:170px}
+    .cover-ring.inner{width:120px;height:120px}
+    .single-photo{max-width:340px;padding:11px 11px 46px}
+    .single-photo .ph{inset:11px 11px 46px}
+    .single-photo figcaption{bottom:11px;font-size:1.15rem}
+    .orn-line{width:46px}
+    .corner{font-size:1.1rem}
+    .deco.candle-glow,.deco.warm-glow{width:240px;height:240px}
+    .deco.sun-rays{width:420px;height:420px}
+  }
+</style>
+</head>
+<body data-theme="cover">
+
+<div class="hearts" id="hearts" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="brand">Caca <span>♥</span> Irham</div>
+  <div class="counter"><span id="curPage">1</span> / <span id="totalPage">8</span></div>
+</header>
+
+<main id="app"></main>
+
+<nav class="navbar" aria-label="Navigasi halaman">
+  <button class="nav-btn" id="prevBtn" aria-label="Halaman sebelumnya">‹</button>
+  <div class="dots" id="dots"></div>
+  <button class="nav-btn" id="nextBtn" aria-label="Halaman selanjutnya">›</button>
+</nav>
+
+<script>
+/* ==================================================================
+   STRUKTUR HALAMAN (8 total)
+   1. Cover — tanpa foto, palet PINK
+   2–7. Album — 6 tema berbeda (kuning, ungu, peach-mint, teal, wine, oranye)
+   8. Surat — krem klasik
+   ================================================================== */
+
+const albums = [
+  {
+    theme : 'lucu', folder : 'lucu', emoji : '😄',
+    title : 'Foto Lucu',
+    note  : 'Tingkah lucu yang bikin aku senyum sendiri.',
+    photo : '1.jpg'
+  },
+  {
+    theme : 'cantik', folder : 'cantik', emoji : '✨',
+    title : 'Foto Cantik',
+    note  : 'Cantiknya kamu itu nggak ada obatnya.',
+    photo : '1.jpg'
+  },
+  {
+    theme : 'imut', folder : 'imut', emoji : '🥺',
+    title : 'Foto Imut',
+    note  : 'Gemesss... nggak bisa dihindari.',
+    photo : '1.jpg'
+  },
+  {
+    theme : 'aib', folder : 'aib', emoji : '😅',
+    title : 'Foto Aib',
+    note  : 'Yang ini... jangan marah ya, Sayang.',
+    photo : '1.jpg'
+  },
+  {
+    theme : 'sexy', folder : 'sexy', emoji : '🔥',
+    title : 'Foto Sexy',
+    note  : 'Sssst... cuma aku yang boleh lihat.',
+    photo : '1.jpg'
+  },
+  {
+    theme : 'favorit-irham', folder : 'favorit-irham', emoji : '💘',
+    title : 'Foto Favorit Irham',
+    note  : 'Ini bukan cuma foto, ini alasan aku jatuh cinta tiap hari.',
+    photo : '1.jpg'
+  }
+];
+
+const pages = [
+  { type: 'cover', theme: 'cover' },
+  ...albums.map(a => ({ type: 'album', data: a, theme: a.theme })),
+  { type: 'letter', theme: 'surat' }
+];
+
+/* ================== JANGAN UBAH DI BAWAH ================== */
+const app     = document.getElementById('app');
+const dotsEl  = document.getElementById('dots');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+let current = 0;
+let swapTimer = null;
+
+pages.forEach((p, i) => {
+  const b = document.createElement('button');
+  b.className = 'dot';
+  const label = p.type === 'cover' ? 'Cover'
+              : p.type === 'album' ? p.data.title
+              : 'Surat';
+  b.title = label;
+  b.setAttribute('aria-label', label);
+  b.addEventListener('click', () => render(i));
+  dotsEl.appendChild(b);
+});
+document.getElementById('totalPage').textContent = pages.length;
+
+/* ---------- DEKORASI UNIK PER TEMA ---------- */
+function getDecor(theme){
+  switch(theme){
+    case 'lucu': return `
+      <span class="deco confetti" style="left:6%;top:6%;--cc:#f59e0b;--d:0s"></span>
+      <span class="deco confetti" style="left:88%;top:12%;--cc:#ff6b9d;--d:.6s"></span>
+      <span class="deco confetti" style="left:14%;top:80%;--cc:#5dbcd2;--d:1.2s"></span>
+      <span class="deco confetti" style="left:82%;top:72%;--cc:#a970e0;--d:1.8s"></span>
+      <span class="deco confetti" style="left:48%;top:4%;--cc:#ffd23f;--d:2.4s"></span>
+      <span class="deco confetti" style="left:68%;top:50%;--cc:#f59e0b;--d:3s"></span>
+      <span class="deco confetti" style="left:24%;top:40%;--cc:#ff6b9d;--d:3.6s"></span>
+      <span class="deco balloon" style="left:8%;bottom:0;--s:34px;--cc:#f59e0b;--d:0s"></span>
+      <span class="deco balloon" style="right:10%;bottom:0;--s:28px;--cc:#ff6b9d;--d:2s"></span>
+      <span class="deco balloon" style="left:32%;bottom:0;--s:22px;--cc:#ffd23f;--d:4s"></span>
+      <span class="deco star-burst" style="left:6%;top:24%;--d:0s">⭐</span>
+      <span class="deco star-burst" style="right:6%;top:38%;--d:.8s">✨</span>
+      <span class="deco star-burst" style="left:10%;bottom:14%;--d:1.6s">🌟</span>
+      <span class="deco star-burst" style="right:8%;bottom:20%;--d:2.4s">⭐</span>
+    `;
+
+    case 'cantik': return `
+      <span class="deco soft-orb" style="left:8%;top:12%;--s:80px;--d:0s"></span>
+      <span class="deco soft-orb" style="right:10%;bottom:18%;--s:70px;--d:2s"></span>
+      <span class="deco soft-orb" style="left:20%;bottom:8%;--s:60px;--d:4s"></span>
+      <span class="deco petal" style="left:8%;top:6%;--d:0s">🌸</span>
+      <span class="deco petal" style="right:12%;top:14%;--d:2.5s">✿</span>
+      <span class="deco petal" style="left:16%;bottom:8%;--d:5s">❀</span>
+      <span class="deco petal" style="right:8%;bottom:18%;--d:7.5s">🌸</span>
+      <span class="deco petal" style="left:46%;top:2%;--d:3s">✿</span>
+      <span class="deco butterfly" style="right:6%;top:30%;--d:1s">🦋</span>
+      <span class="deco butterfly" style="left:8%;top:60%;--d:4s">🦋</span>
+      <span class="deco soft-sparkle" style="right:10%;top:44%;--d:1s">✦</span>
+      <span class="deco soft-sparkle" style="left:8%;top:56%;--d:2.4s">✧</span>
+      <span class="deco soft-sparkle" style="left:20%;top:24%;--d:3.6s">✦</span>
+      <span class="deco soft-sparkle" style="right:16%;top:70%;--d:.6s">✧</span>
+    `;
+
+    case 'imut': return `
+      <span class="deco cloud" style="left:2%;top:8%;--d:0s">☁️</span>
+      <span class="deco cloud" style="right:2%;top:18%;--d:3s">☁️</span>
+      <span class="deco cloud" style="left:6%;bottom:12%;--d:6s">☁️</span>
+      <span class="deco bubble" style="left:8%;bottom:0;--s:26px;--d:0s"></span>
+      <span class="deco bubble" style="left:84%;bottom:0;--s:32px;--d:1.4s"></span>
+      <span class="deco bubble" style="left:24%;bottom:0;--s:18px;--d:3s"></span>
+      <span class="deco bubble" style="right:22%;bottom:0;--s:28px;--d:4.5s"></span>
+      <span class="deco bubble" style="left:50%;bottom:0;--s:22px;--d:6s"></span>
+      <span class="deco cute-heart" style="left:8%;top:28%;--d:0s">💕</span>
+      <span class="deco cute-heart" style="right:8%;top:58%;--d:1.2s">💗</span>
+      <span class="deco cute-heart" style="left:14%;bottom:22%;--d:2.4s">💖</span>
+      <span class="deco kawaii-star" style="right:12%;top:20%;--d:0s">✨</span>
+      <span class="deco kawaii-star" style="left:10%;top:50%;--d:1.5s">⭐</span>
+      <span class="deco kawaii-star" style="right:6%;bottom:30%;--d:3s">💫</span>
+    `;
+
+    case 'aib': return `
+      <span class="deco comic-burst" style="left:6%;top:12%;--d:0s">POW!</span>
+      <span class="deco comic-burst" style="right:6%;top:28%;--d:.7s">!?</span>
+      <span class="deco comic-burst" style="left:10%;bottom:16%;--d:1.4s">XD</span>
+      <span class="deco comic-burst" style="right:8%;bottom:26%;--d:2.1s">OMG</span>
+      <span class="deco sweat" style="left:16%;top:42%;--d:0s">💦</span>
+      <span class="deco sweat" style="right:14%;top:60%;--d:.9s">💦</span>
+      <span class="deco sweat" style="right:18%;top:18%;--d:1.8s">💦</span>
+      <span class="deco speed-line" style="left:2%;top:30%;--r:0deg;--d:0s"></span>
+      <span class="deco speed-line" style="right:2%;top:50%;--r:0deg;--d:1s"></span>
+      <span class="deco speed-line" style="left:4%;bottom:24%;--r:-12deg;--d:2s"></span>
+      <span class="deco speed-line" style="right:4%;bottom:14%;--r:12deg;--d:3s"></span>
+      <span class="deco memphis" style="left:14%;top:70%;--d:0s"></span>
+      <span class="deco memphis" style="right:20%;top:10%;--d:1.5s"></span>
+      <span class="deco memphis" style="right:6%;bottom:8%;--d:3s"></span>
+    `;
+
+    case 'sexy': return `
+      <span class="deco candle-glow"></span>
+      <span class="deco gold-particle" style="left:8%;bottom:0;--s:6px;--d:0s"></span>
+      <span class="deco gold-particle" style="left:86%;bottom:0;--s:8px;--d:1s"></span>
+      <span class="deco gold-particle" style="left:28%;bottom:0;--s:5px;--d:2.2s"></span>
+      <span class="deco gold-particle" style="right:24%;bottom:0;--s:7px;--d:3.5s"></span>
+      <span class="deco gold-particle" style="left:48%;bottom:0;--s:4px;--d:5s"></span>
+      <span class="deco gold-particle" style="right:8%;bottom:0;--s:5px;--d:6s"></span>
+      <span class="deco elegant-sparkle" style="left:8%;top:18%;--d:.4s">✦</span>
+      <span class="deco elegant-sparkle" style="right:8%;top:38%;--d:1.6s">✧</span>
+      <span class="deco elegant-sparkle" style="left:14%;bottom:22%;--d:2.8s">✦</span>
+      <span class="deco elegant-sparkle" style="right:16%;bottom:14%;--d:.9s">✧</span>
+    `;
+
+    case 'favorit-irham': return `
+      <span class="deco sun-rays"></span>
+      <span class="deco warm-glow"></span>
+      <span class="deco warm-dust" style="left:10%;bottom:0;--s:6px;--d:0s"></span>
+      <span class="deco warm-dust" style="left:82%;bottom:0;--s:8px;--d:1.4s"></span>
+      <span class="deco warm-dust" style="left:30%;bottom:0;--s:5px;--d:3s"></span>
+      <span class="deco warm-dust" style="right:18%;bottom:0;--s:7px;--d:4.6s"></span>
+      <span class="deco warm-dust" style="right:36%;bottom:0;--s:5px;--d:6s"></span>
+      <span class="deco warm-heart" style="left:8%;top:22%;--d:0s">💛</span>
+      <span class="deco warm-heart" style="right:8%;top:52%;--d:1.5s">💕</span>
+      <span class="deco warm-heart" style="left:14%;bottom:18%;--d:3s">❤️</span>
+      <span class="deco warm-heart" style="right:12%;bottom:30%;--d:4.5s">🧡</span>
+    `;
+
+    default: return '';
+  }
+}
+
+/* ---------- COVER ---------- */
+function coverHTML(){
+  return `
+    <section class="page cover-page">
+      <div class="cover-frame">
+        <div class="cover-glow"></div>
+        <div class="cover-ring"></div>
+        <div class="cover-ring inner"></div>
+
+        <span class="corner tl">♥</span>
+        <span class="corner tr">♥</span>
+        <span class="corner bl">♥</span>
+        <span class="corner br">♥</span>
+
+        <span class="cover-sparkle" style="top:10%;left:8%;animation-delay:0s">✦</span>
+        <span class="cover-sparkle" style="top:18%;right:9%;animation-delay:.8s">✧</span>
+        <span class="cover-sparkle" style="top:52%;left:5%;animation-delay:1.6s">✦</span>
+        <span class="cover-sparkle" style="top:60%;right:6%;animation-delay:2.4s">✧</span>
+        <span class="cover-sparkle" style="bottom:20%;left:12%;animation-delay:.4s">✧</span>
+        <span class="cover-sparkle" style="bottom:16%;right:14%;animation-delay:1.2s">✦</span>
+
+        <div class="cover-heart">💗</div>
+        <h1 class="cover-title">
+          Foto Foto<br>Favorit Caca
+          <span class="sub-line">— versi Irham —</span>
+        </h1>
+
+        <div class="cover-ornament">
+          <span class="orn-line"></span>
+          <span class="orn-heart">♥</span>
+          <span class="orn-line"></span>
+        </div>
+
+        <p class="cover-sub">
+          Sebuah album kecil<br>
+          tentang kamu, untuk kamu
+        </p>
+
+        <button class="cover-cta" type="button">
+          Buka Album ✨
+        </button>
+      </div>
+    </section>
+  `;
+}
+
+/* ---------- ALBUM ---------- */
+function albumHTML(a){
+  const file = a.photo && a.photo.trim();
+  const pearls = a.theme === 'cantik' ? `
+    <span class="cantik-pearl" style="top:-22px;left:-22px"></span>
+    <span class="cantik-pearl" style="top:-22px;right:-22px"></span>
+    <span class="cantik-pearl" style="bottom:-22px;left:-22px"></span>
+    <span class="cantik-pearl" style="bottom:-22px;right:-22px"></span>
+  ` : '';
+
+  return `
+    <section class="page">
+      <div class="decor-layer" aria-hidden="true">${getDecor(a.theme)}</div>
+      <div class="page-head">
+        <span class="page-emoji">${a.emoji}</span>
+        <h1 class="page-title">${a.title}</h1>
+        <p class="page-note">${a.note}</p>
+        <div class="divider"></div>
+      </div>
+      <div class="single-photo-wrap">
+        <figure class="single-photo">
+          ${pearls}
+          <div class="ph">♥<small>Foto menyusul</small></div>
+          ${file
+            ? `<img src="images/${a.folder}/${file}" alt="${a.title}" onerror="this.remove()">`
+            : ''}
+          <figcaption><span class="cap-heart">♥</span></figcaption>
+        </figure>
+      </div>
+    </section>
+  `;
+}
+
+/* ---------- SURAT ---------- */
+function letterHTML(){
+  return `
+    <section class="page">
+      <div class="decor-layer" aria-hidden="true">
+        <span class="deco letter-flourish top">❦</span>
+        <span class="deco letter-flourish bottom">❦</span>
+      </div>
+      <div class="page-head">
+        <span class="page-emoji">💌</span>
+        <h1 class="page-title">Surat untuk Caca</h1>
+        <div class="divider"></div>
+      </div>
+      <div class="letter-wrap">
+        <article class="letter">
+          <p class="salutation">Sayangku,</p>
+          <p>sudah banyak sekali foto momen yang sudah aku dokumentasikan. Banyak sekali cerita dibaliknya, itu mengingatkan aku bahwa hubungan kita sudah sangat meninggalkan bekas yang indah dalam hidup aku. Aku harap foto ini akan terus bertambah selamanya.</p>
+          <p class="closing">I Love You <span class="heart">❤️</span></p>
+          <p class="signature">— Irham</p>
+          <span class="deco wax-seal">❤</span>
+        </article>
+      </div>
+    </section>
+  `;
+}
+
+/* ---------- RENDER — INI DIPERBAIKI ---------- */
+function render(i){
+  current = Math.max(0, Math.min(pages.length - 1, i));
+  if (swapTimer) clearTimeout(swapTimer);
+
+  app.classList.add('swapping');
+
+  swapTimer = setTimeout(() => {
+    swapTimer = null;
+    const p = pages[current];
+
+    /* ✅ BUG FIX: ambil theme dari p.theme ATAU p.data.theme */
+    const theme = p.theme || (p.data && p.data.theme) || 'cover';
+    document.body.dataset.theme = theme;
+
+    if (p.type === 'cover')       app.innerHTML = coverHTML();
+    else if (p.type === 'album')  app.innerHTML = albumHTML(p.data);
+    else                          app.innerHTML = letterHTML();
+
+    document.getElementById('curPage').textContent = current + 1;
+    [...dotsEl.children].forEach((d, idx) =>
+      d.classList.toggle('active', idx === current)
+    );
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === pages.length - 1;
+
+    app.classList.remove('swapping');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 180);
+}
+
+app.addEventListener('click', e => {
+  if (e.target.closest('.cover-cta')) render(current + 1);
+});
+
+prevBtn.addEventListener('click', () => render(current - 1));
+nextBtn.addEventListener('click', () => render(current + 1));
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowLeft')  render(current - 1);
+  if (e.key === 'ArrowRight') render(current + 1);
+});
+
+let sx = 0, sy = 0;
+document.addEventListener('touchstart', e => {
+  sx = e.changedTouches[0].clientX;
+  sy = e.changedTouches[0].clientY;
+}, { passive:true });
+document.addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - sx;
+  const dy = e.changedTouches[0].clientY - sy;
+  if (Math.abs(dx) > 65 && Math.abs(dx) > Math.abs(dy)) {
+    if (dx < 0) render(current + 1);
+    else        render(current - 1);
+  }
+}, { passive:true });
+
+(function createHearts(){
+  const box = document.getElementById('hearts');
+  const chars = ['♥','💕','💗','❤️','🌸','💞'];
+  for (let i = 0; i < 16; i++){
+    const s = document.createElement('span');
+    s.textContent = chars[Math.floor(Math.random() * chars.length)];
+    s.style.left = Math.random() * 100 + '%';
+    s.style.fontSize = (12 + Math.random() * 16) + 'px';
+    s.style.animationDuration = (14 + Math.random() * 14) + 's';
+    s.style.animationDelay = (-Math.random() * 24) + 's';
+    box.appendChild(s);
+  }
+})();
+
+render(0);
+</script>
+</body>
+</html>
